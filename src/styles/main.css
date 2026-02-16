@@ -1,0 +1,459 @@
+body { margin:0; background: black; font-family:system-ui; }
+
+
+
+
+.bg { background:url('/assets/images/twixbg1.jpg') center/cover no-repeat }
+
+
+input, button { width:100%; max-width:320px; padding:14px; margin:6px 0; border-radius:12px; border:none; font-size:16px }
+
+
+button { background:black; color:white }
+
+
+.game { min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center }
+
+
+.grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; width:100%; max-width:360px }
+
+
+.card { background:gold; border-radius:50%; aspect-ratio:1; display:flex; justify-content:center; align-items:center; font-size:28px }
+
+.bg-language {
+  background: url('../assets/images/twixbg1.jpg') center/cover no-repeat;
+}
+
+.bg-age {
+  background: url('../assets/images/age-bg.jpg') center/cover no-repeat;
+}
+
+.bg-form {
+  background: url('../assets/images/form-bg.jpg') center/cover no-repeat;
+}
+
+.bg-game {
+  background: url('../assets/images/game-bg.jpg') center/cover no-repeat;
+}
+
+
+
+@media(min-width:1025px){
+.mobile-wrapper{display:none}
+body::before{content:'Open on mobile or tablet'; display:flex; justify-content:center; align-items:center; height:100vh; font-size:24px}
+}
+
+/* -------- Screen Layout -------- */
+
+.screen {
+  height: 100svh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* -------- Background -------- */
+
+.bg-language {
+  background: url("/assets/images/twixbg1.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+/* -------- Bottom UI -------- */
+
+.bottom-ui {
+  position: absolute;
+  bottom: 4%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* -------- Buttons -------- */
+
+.twix-select {
+  width: 88%;
+  max-width: 360px;
+  height: 54px;
+  border-radius: 14px;
+  border: none;
+  background: #e4002b;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.twix-select span {
+  font-size: 18px;
+}
+
+/* -------- Dropdown -------- */
+
+.dropdown-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.twix-dropdown {
+  position: absolute;
+  bottom: 62px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 88%;
+  max-width: 360px;
+  background: white;
+  border-radius: 14px;
+  overflow-y: auto;
+  max-height: 42vh;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.28);
+  animation: dropdown 0.25s ease;
+  z-index: 100;
+}
+
+.twix-dropdown div {
+  padding: 14px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.twix-dropdown div:last-child {
+  border-bottom: none;
+}
+
+.twix-dropdown div:hover {
+  background: #f3f3f3;
+}
+
+/* -------- Animation -------- */
+
+@keyframes dropdown {
+  from {
+    transform: translate(-50%, 10px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+
+/* age screen */
+
+/* ---------- AGE SCREEN ---------- */
+
+.age-wrapper {
+  position: relative;
+  height: 100svh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Background */
+.age-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Center Card */
+.age-card {
+  position: absolute;
+  inset: 5%;
+  background: #e4002b;
+  border-radius: 18px;
+  padding: 26px 20px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+/* Logo */
+.age-logo {
+  width: 145px;
+  margin-top: 4px;
+}
+
+/* Heading */
+.age-card h1 {
+  color: white;
+  text-align: center;
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 900;
+  margin: 4px 0 2px;
+}
+
+/* Burst Graphic */
+.age-burst {
+  width: 160px;
+  margin: 6px 0 4px;
+}
+
+/* Buttons */
+.age-btn {
+  width: 100%;
+  height: 60px;
+  border-radius: 14px;
+  border: none;
+  font-size: 20px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.age-btn.yes {
+  background: white;
+  color: #e4002b;
+}
+
+.age-btn.no {
+  background: white;
+  color: #e4002b;
+  margin-bottom: 4px;
+  margin-top: -50px;
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+  .age-card {
+    inset: 7%;
+    max-width: 430px;
+    margin: auto;
+  }
+}
+
+
+/* ---------- FORM SCREEN ---------- */
+
+.form-screen {
+  height: 100svh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header */
+.form-header {
+  height: 15%;
+  min-height: 110px;
+  background: #e4002b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-header img {
+  width: 140px;
+}
+
+/* Body */
+.form-body {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  padding: 18px 20px 22px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Player Sections */
+.player span {
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.player h2 {
+  font-size: 40px;
+  font-weight: 900;
+  margin: -4px 0 6px;
+}
+
+/* Inputs */
+.player input {
+  width: 100%;
+  height: 46px;
+  border-radius: 8px;
+  border: none;
+  margin: 6px 0;
+  padding: 0 14px;
+  font-size: 15px;
+}
+
+/* Submit */
+.submit-btn {
+  margin-top: 14px;
+  width: 100%;
+  height: 54px;
+  border-radius: 12px;
+  background: #e4002b;
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+/* Footer Text */
+.stand-text {
+  text-align: center;
+  font-weight: 700;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+/* Tablets */
+@media (min-width: 600px) {
+  .form-body {
+    padding: 24px 24px 30px;
+  }
+  .form-header img {
+    width: 170px;
+  }
+}
+
+
+/* game section */
+
+.game-container {
+  height: 100svh;
+  background: #e60023;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 14px 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Logo */
+.logo {
+  width: 140px;
+  margin: 10px 0 14px;
+}
+
+/* Title */
+.title {
+  color: white;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+/* Game area wrapper */
+.game-area {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(60px, 20vw));
+  gap: 14px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+/* Cards */
+.card {
+  aspect-ratio: 1;
+  width: 100%;
+  max-width: 86px;
+  border-radius: 50%;
+  background: #f5c542;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  cursor: pointer;
+}
+.card:active {
+  transform: scale(0.94);
+}
+
+.card.open {
+  background: white;
+}
+
+
+
+
+
+/* thankyou */
+
+.thank-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.thank-logo {
+  width: 200px;
+  margin-bottom: 18px;
+}
+
+.thank-card {
+  background: #e4002b;
+  transform: rotate(-6deg);
+  padding: 18px 30px;
+  border-radius: 14px;
+  margin-bottom: 18px;
+}
+
+.thank-card h1 {
+  color: white;
+  font-size: 58px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.thank-text {
+  color: white;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.thank-text span {
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.thank-sub {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.thank-choco {
+  width: 200px;
+  margin-top: 10px;
+}
+
+
+
+
+
